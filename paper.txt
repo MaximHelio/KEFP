@@ -1,522 +1,887 @@
-Hydrogen Diusion and Trapping in -Iron:
-The Role of Quantum and Anharmonic Fluctuations
-Bingqing Cheng,1 Anthony T. Paxton,2 and Michele Ceriotti1
-1Laboratory of Computational Science and Modeling, Institute of Materials,
- Ecole Polytechnique Federale de Lausanne, 1015 Lausanne, Switzerland
-2Department of Physics, King's College London. Strand, London WC2R 2LS, UK
-(Dated: November 9, 2018)
-We investigate the thermodynamics and kinetics of a hydrogen interstitial in magnetic -iron,
-taking account of the quantum 
-uctuations of the proton as well as the anharmonicities of lattice
-vibrations and hydrogen hopping. We show that the diusivity of hydrogen in the lattice of BCC
-iron deviates strongly from an Arrhenius behavior at and below room temperature. We compare
-a quantum transition state theory to explicit ring polymer molecular dynamics in the calculation
-of diusivity and we nd that the role of phonons is to inhibit, not to enhance, diusivity at
-intermediate temperatures in constrast to the usual polaron picture of hopping. We then address
-the trapping of hydrogen by a vacancy as a prototype lattice defect. By a sequence of steps in
-a thought experiment, each involving a thermodynamic integration, we are able to separate out
-the binding free energy of a proton to a defect into harmonic and anharmonic, and classical and
-quantum contributions. We nd that about 30% of a typical binding free energy of hydrogen to
-a lattice defect in iron is accounted for by nite temperature eects and about half of these arise
-from quantum proton 
-uctuations. This has huge implications for the comparison between thermal
-desorption and permeation experiments and standard electronic structure theory. The implications
-are even greater for the interpretation of muon spin resonance experiments.
-The injection, transport and trapping of subatomic
-particles such as protons, deuterons, tritons, muons,
-or positrons in solids takes a pivotal role in experi-
-mental characterization techniques such as muon spin
-spectroscopy (SR) [1], positron annihilation experi-
-ments [2, 3]; and in the design of plasma containment
-in fusion power generators [4]. In the case of hydrogen,
-diusion and trapping is also crucial in many technolog-
-ical and materials science applications, including for in-
-stance hydrogen storage and fuel cells [5, 6], in particular
-the deleterious eects of hydrogen on electrode integrity
-as a consequence of the Gorski eect. Diusion of hy-
-drogen in iron is also of interest in nal stages of stellar
-evolution [7]. The problem of hydrogen embrittlement of
-iron and steel is deeply concerned with the rate of proton
-diusion and the depth of lattice defect traps which may
-serve to attenuate the diusivity, since it is expected that
-crack tip speed may be limited by the rate at which it
-can be fed by hydrogen [8]. The trapping of hydrogen by
-vacancies is of particular importance because by the de-
-factant eect [9] the vacancy is stabilized by trapping and
-indeed the equilibrium vacancy concentration is known
-to be enhanced by orders of magnitude as a result of hy-
-drogen ingress [10] leading to damage and compromised
-structural integrity [11]. The depth of a microstructural
-trap, that is, the free energy gain by transferring a proton
-from a bulk tetrahedral site into the trap, is extremely
-hard to measure since although an average trap depth
-over many defects is accessible through thermal desorp-
-tion spectroscopy, it is not possible to prepare specimens
-with just a single defect in order to distinguish, say a
-dislocation trap from a grain boundary or interface site.
-This is particularly dicult in the case of the vacancy.
-It is possible to calculate trap depths using density func-
-tional theory (DFT) and for example it has been shown
-that the vacancy may trap up to six protons|one close
-to each face of the cube surrounding the defect [12]. Un-
-fortunately standard DFT calculations have ready access
-only to the zero temperature total energy the quantum
-nature of the subatomic particle is usually neglected or
-accounted for only in terms of a zero point energy (ZPE).
-Our aim in the present work is to unravel various con-
-tributions to the binding free energy to provide both a
-framework for the general case and to address the trap-
-ping of H in ferrite (-Fe) quantitatively. Atomistic mod-
-elling of a hydrogen interstitial in -iron poses enormous
-challenges; rst the magnetism requires an explicit treat-
-ment of the electronic degrees of freedom of the sys-
-tem [12{14], second the timescale required to measure
-the H binding free energy to defects as well as the diu-
-sivity in the bulk lattice is usually not accessible in ab
-initio MD simulations. To make the matter even more
-complex, the small mass of the proton means that nuclear
-quantum eects (NQEs) can play an important role at
-room temperature and below. For instance, it has been
-demonstrated that NQEs have a signicant eect on the
-thermodynamic stability of dierent phases [15{17], as
-well as on the diusivity of protons [18{20].
-In the present study interatomic forces are described
-within the self consistent magnetic tight binding (TB)
-approximation [21]. Parameters for the model are given
-in Ref. [22]. TB theory is an abstraction of the DFT and
-hence has the benet of capturing the essential physics of
-the chemical bond, including self consistent charge trans-
-arXiv:1803.00600v1 [cond-mat.mtrl-sci] 1 Mar 2018
-2
-fer, with forces derived from the Hellmann-Feynman the-
-orem, but because the Hamiltonian is obtained from a
-tted look-up table rather than determined ab initio, the
-method is computationally very fast. The evaluation of
-NQEs is achieved by using the imaginary time path in-
-tegral formalism of quantum mechanics. The path inte-
-gral formalism maps the quantum mechanical partition
-function onto the partition function of a classical ring-
-polymer system [23{26], and as such the quantum system
-can be described by P copies of the physical system with
-corresponding particles in adjacent replicas connected by
-harmonic springs. When P = 1 the nuclei are purely clas-
-sical, and when P ! 1 each nucleus in the ring polymer
-system is fully consistent with the statistics of a quantum
-system of distinguishable particles. Methods inspired
-by path integral molecular dynamics (PIMD) [27, 28]
-can also be used to approximate time-dependent observ-
-ables. We will use the thermostatted ring polymer molec-
-ular dynamics (TRPMD) method [29]. The reader is re-
-ferred to recent reviews for a more thorough discussion
-of PIMD-related methods [30].
-In order to compute the quantum congurational dis-
-tribution and the diusivity of H in bulk -Fe lattice, we
-rst performed TRPMD simulations of a system consist-
-ing of 16 Fe atoms on a perfect BCC iron lattice, and
-a H interstitial atom. We performed simulations at 300,
-200, 150, 100 and 50 K, increasing the number of beads
-P from 16 to 64 beads as the temperature was lowered,
-to account for the stronger quantum nature of nuclei at
-lower temperature. For the sake of comparison, we also
-performed classical simulations (i.e. only using one bead
-for the ring polymer) from 1000 K to 100 K. The diu-
-sion coecients of H in the bulk -Fe lattice were com-
-puted from the ! ! 0 limit of the velocity-velocity au-
-tocorrelation spectrum of the H atom. Results for these
-simulations are reported in Figure 1, compared with the
-results from a previous calculation using a classical em-
-bedded atom potential (EAM) for interatomic forces [31],
-as well as experimental measurements [32, 33] in the high-
-temperature regime.
-The most prominent observation from Figure 1 is the
-stark dierence between the classical and the quantum
-diusion coecient of H in the bulk lattice at tempera-
-tures equal or lower than room temperature. Using clas-
-sical molecular dynamics, the temperature dependence
-closely follows Arrhenius behavior as indicated by the
-dashed red line. Furthermore, the classical diusivities
-predicted by the TB hamiltonian and the EAM force
-eld are very similar, despite the distinct forms of the
-potentials. However, when nuclear quantum eects are
-included by either using the path integral formalism or
-by employing centroid molecular dynamics, a strong de-
-viation of the H diusivity from Arrhenius behavior be-
-low room temperature emerges. At the low-T end of the
-experimental temperature range (300 K), classical MD
-predictions for both TB and EAM are about a factor of
-5 10 15 20
-1000/T
-1000K 300K 100K 50K
-10-10
-10-9
-10-8
-log10D(m2/s)
-TB-MD
-TB-RPMD
-EAM-MD
-EAM-CMD Exp.
-QTST
-FIG. 1. (Color online) Measured and calculated diusivity
-of hydrogen in -Fe. Experimental data are drawn as solid
-green Arrhenius lines in the temperature range of the measurements
-[32, 33]. Blue squares are from centroid molecular
-dynamics simulations by Kimizuka et al. [31] using an embedded
-atom classical potential (EAM) and a Morse potential for
-hydrogen and iron; MD is classical molecular dynamics and
-CMD is centroid MD. The red curve is the result of a quantum
-transition state theory (QTST) calculation by Katzarov
-and Paxton [34, 35]. The open and solid red squares are our
-results using the TB hamiltonian and classical MD and path
-integral MD (RPMD), respectively. On the inset, the distribution
-of quantum mechanical H atoms in the BCC unit cell
-that was computed from RPMD simulations is shown.
-two lower than experiments, while quantum results for
-both models are in good agreement. The discrepancy
-between classical and quantum dynamics indicates the
-importance of NQEs, which becomes dramatic at lower
-temperatures (50 K to 200 K).
-While the EAM and TB are in agreement in the clas-
-sical MD, there is a large discrepancy at low T between
-the EAM-CMD and the TB-RPMD. It is not unusual
-to see larger discrepancies between potential energy sur-
-faces when simulations are performed that include nu-
-clear quantum 
-uctuations, because congurations ex-
-plore regions that display large levels of anharmonicities,
-and that are often not included in the tting of the po-
-tential [36, 37]. It is possible that while the EAM is
-tted to the classical activation barrier, the EAM does
-not describe well the three dimensional potential energy
-surface for H moving around the Fe-lattice. On the other
-hand the TB very well reproduces this \adiabatic sur-
-face" in comparison to density functional calculations,
-patricularly near the saddle point [38]. This means that
-as the beads wander far from the classical reaction co-
-ordinate the proton samples regions of the conguration
-space that the EAM does not describe well.
-It is very instructive to compare the QTST with the
-TRPMD. The QTST uses xed potential energy surfaces
-3
-at the reactant basin and at the saddle point. After that
-the partition functions are calculated, which means that
-the rate coecient can be found without great eort at
-any temperature [35]. Because the rather articial con-
-struction is made in Ref. 35 that the potential energy in
-conguration space is calculated using a relaxed atomic
-system with the proton constrained at the saddle point
-the QTST would be expected to overestimate the diu-
-sivity. On the other hand, the QTST neglects dynamic
-phonon eects such as phonon assisted tunneling in the
-polaron picture [39]. From that point of view one might
-expect that the TB-RPMD would predict a greater diu-
-sivity than the TB-QTST. As seen in gure 1 the opposite
-is the case at temperatures between 100 and 300 K. This
-implies that phonon assisted tunneling is not a large ef-
-fect: on the contrary our calculations reveal that phonons
-attenuate proton diusion, presumably through proton-
-phonon scattering. The qualitative agreement between
-TB-QTST and TB-RPMD at all temperatures validates
-the use of the much cheaper QTST to estimate rate co-
-ecients in the quantum regime.
-To elucidate the mechanism of H diusion in -Fe we
-show the quantum mechanical density distribution of H
-at 300 K in a BCC unit cell on the inset of Figure 1. It can
-be seen that the equilibrium positions for H in the lattice
-are tetrahedral (T) sites. Meanwhile, NQEs broaden the
-spread of the distribution of H around the energy minima,
-which indicates strong ZPE eects in the H hopping. In
-other words, NQEs delocalize H in the reactant state, and
-eectively reduce the free energy barrier for H migration
-between neighboring T-sites.
-Diusion in the perfect BCC lattice is a necessary com-
-ponent of the mechanistic understanding of the mobility
-of H in -Fe. However, the rate-limiting step for macro-
-scopic diusion always involves binding to crystal defects.
-In order to assess the importance of dierent terms in the
-overall binding free energy between the H atom and the
-defect, in the second part of our study we consider the
-archetypical example of a vacancy in -Fe. Computing
-this binding energy by sampling of the NVT ensemble is
-dicult, as the waiting time for a trapped H to be re-
-leased is far beyond the time scale of standard molecular
-dynamics. Furthermore, a very large simulation would
-be needed to bring the H atom suciently far from the
-vacancy to estimate accurately the binding energy in the
-dilute limit.
-For these reasons, we decided to compute the stabil-
-ity of a H atom bound to a vacancy, relative to that
-of a H atom in a tetrahedral site of the perfect BCC
-lattice, by computing rst the absolute Helmholtz free
-energies for four systems separately [40]: (i ) a perfect
-bulk -Fe system that has 16 atoms (Fe16), (ii ) a sys-
-tem with a vacancy (Fe15), (iii ) a system with a H
-interstitial (Fe16H), and (iv) a system with a vacancy
-and a H interstitial (Fe15H). Based on the Helmholtz
-free energy of the four independent systems, at a cer-
-FIG. 2. (Color online) Schematics of thermodynamic integration
-(TI) routes used in the free energy evaluations. The green
-arrow indicates the switching between an harmonic reference
-system ( = 0) and a real system ( = 1), the red arrow illustrates
-TI with respect to temperature, and the blue arrow
-shows TI from a classical to a quantum mechanical system.
-tain thermodynamic condition the binding energy of a
-H to a mono-vacancy can be schematically expressed as
-AV 􀀀H = A(Fe16H) + A(Fe15) 􀀀 A(Fe15H) 􀀀 A(Fe16).
-To compute A for the four systems, we used the ther-
-modynamic integration (TI) method, that uses a series
-of simulations of real or articial systems to compute the
-various components of the free energy dierence between
-a harmonic reference system and the fully anharmonic,
-quantum system. To do so eciently, we have carefully
-selected a combination of multiple thermodynamic in-
-tegration routes as depicted schematically in Figure 2.
-This combination thus takes into account vibrational en-
-tropy, anharmonicity and NQEs, and makes it possible to
-disentangle the dierent contributions. Since a detailed
-description of thermodynamic integration routes and sev-
-eral tricks of the trade can be found in Ref. [41], here we
-brie
-y describe the routes employed in the present study.
-The rst TI route (the green arrow in Figure 2) goes from
-the classical harmonic crystal whose free energy Ah is an-
-alytic, to the classical physical system at a low tempera-
-ture T0 =10 K, under which condition the H interstitial
-atom does not jump between degenerate trap sites about
-the vacancy during the MD simulations. The second TI
-route (the red arrow) allows us to obtain the temperature
-dependence of the Helmholtz free energies of each Fe-H
-system, by running simulations of the classical physical
-system under the NVT ensemble from the low temper-
-ature T0 to a higher temperature T1 = 300 K. The last
-part of TI takes into account NQEs at T1 = 300 K. The
-quantum mechanical free energy dierence is a function
-of atomic mass, thus for a given system the overall NQEs
-in free energy can be evaluated from the integration of
-the quantum centroid virial kinetic energy with respect
-to the ctitious atomic mass  [17, 42]. In practice, the
-4
-Quantum
-0K
-HAR
-Quantum-HAR
-ANH
-0 100 200 300
-Temperature [K]
-0.25
-0.3
-0.35
-0.4
-H-binding free energy [eV]
-FIG. 3. The temperature dependent H binding free energy to
-a mono-vacancy in -Fe . The black line is the prediction just
-using the minima of the potential energy surface at 0 K, the
-blue line shows the harmonic approximation for the classical
-system, the green line illustrate the harmonic approximation
-for the quantum mechanical system, the red curve indicates
-the fully anharmonic result of the classical system, and the
-yellow dot shows the quantum and anharmonic result. Statistical
-uncertainties are indicated by the errorbars. In the
-inset: the distribution of quantum mechanical H atoms near
-a vacancy, as computed by TRPMD at 300 K. The proton
-spends no time at the vacant site itself; this is consistent with
-DFT calculations [12] and validates our TB hamiltonian.
-integrand was evaluated for the actual system and for
-systems with all the atomic masses scaled 4 and 16 times
-in PIMD simulations.
-In Figure 3 we plot the predictions from the har-
-monic approximations, the classical anharmonic free en-
-ergy contribution, and the overall free energy of binding
-taking into account fully both anharmonicity and NQEs.
-At all temperatures, the vibrational entropy plays an im-
-portant role in the hydrogen-vacancy binding energy of
-the classical Fe-H systems, as demonstrated by the con-
-siderable dierence between the 0 K prediction (the black
-line in Figure 3) and classical harmonic approximation
-(the blue line in Figure 3). This dierence in the vi-
-bration frequencies of the vacancy-trapped and the free
-H in the T sites also translates to the large zero point
-energy contribution to the overall binding free energy,
-which is indicated by the remarkable gap between the
-harmonic approximations using the classical Boltzmann
-distribution and the quantum mechanical Bose-Einstein
-distribution (the blue line and the green line in Figure 3,
-respectively). Finally, anharmonicity, which is an oft-
-neglected part in previous DFT calculations [12, 13, 43{
-46] has a non-negligible eect even at room temperature.
-The anharmonic part of the potential is also softer for the
-H in the vacancy than for the interstitial site, and so the
-anharmonic contribution to the free energy leads to a fur-
-ther stabilization of the bound state, both classically and
-quantum mechanically. In short, the anharmonic quan-
-tum mechanical trapping energy of H in alpha-iron at 300
-K is predicted to be 0:3650:005 eV using the TB Hamil-
-tonian. This result compared well with the experimental
-measurements of 0:55 􀀀 0:81 eV for hydrogen trapping
-energy in alpha-iron [47, 48], and 0:48􀀀0:63 eV for deu-
-terium at room temperature [49, 50], whereas a result
-based purely on the potential energy dierence between
-the two states would predict a much lower binding energy
-of 0.25 eV. This has implications for the identication of
-trap sites by comparison of thermal desorption spectra
-and total energy calculations. Figure 3 shows that the
-usual correction of adding the ZPE [13] is in this case ac-
-curate since the temperature correction to the harmonic
-approximation at 300 K is canceled by the anharmonic
-correction|but this will not always be the case.
-In conclusion, we have characterized the importance
-of NQEs and anharmonicity in two of the microscopic
-mechanisms that underlie the transport of H atoms in
-in -Fe namely H diusion in the perfect BCC lattice,
-and the thermodynamic free energy that describes the
-binding of H to a monovacancy. Nuclear quantum ef-
-fects change the diusion coecient of H in bulk -Fe
-by a factor of two at room temperature, and the quan-
-tum eects become overwhelming at lower temperatures.
-We then consider the case of the binding free energy of
-H to a monovacancy, for which we considered and dis-
-entangled dierent contributions such as vibrational en-
-tropy, anharmonicity and NQEs, concluding that they all
-play a signicant role at room temperature, and collec-
-tively increase the binding energy from 0.25 meV to 0.36
-meV. This latter is closer to the experimental estimates,
-and the magnitude of the quantum contribution is con-
-sistent with the experimental observation that deuterium
-is less strongly bound than 1H. Our ndings thus suggest
-that nuclear quantum eects may have signicant eects
-on the interactions between H atoms and other defects,
-which are essential in achieving a quantitative predictive
-capability of the hydrogen embrittlement process. In ad-
-dition, hopping and trapping of other charged subatomic
-particles in metal lattices is of central importance in solid
-state physics, encompassing phenomena such as SR and
-positron annihilation experiments. There is no doubt in
-view of our ndings that quantum 
-uctuations will take
-a greater part in the physics of these processes and this
-study has furnished us with a recipe for how to address
-these questions, such as the diusivity of a positron in a
-metal or semiconductor or the trap depth of a muon at
-a crystal defect.
-M.C. and B.C. acknowledge nancial support by the
-Swiss National Science Foundation (project ID 200021-
-159896), and allocation of CPU time under the CSCS
-Project ID s787. ATP acknowledges the support of
-the UK EPSRC under the Programme Grant HEmS,
-EP/L014742.
-5
-[1] E. Brandt and A. Seeger, Advances in Physics 35, 189
-(1986).
-[2] A. Seeger, Applied physics 4, 183 (1974).
-[3] J. Slotte, I. Makkonen, and F. Tuomisto, ECS Journal
-of Solid State Science and Technology 5, 3166 (2016).
-[4] R. A. Causey and T. J. Venhaus, Physica Scripta 2001,
-9 (2001).
-[5] P. L. Cabot, E. Guezala, J. C. Calpe, M. T. Garca, and
-J. Casado, J. Electrochem. Soc. 147, 43 (2000).
-[6] D. Alique, D. Martinez-Diaz, R. Sanz, and J. Calles,
-Membranes, 5, 1 (2018).
-[7] E. Salpter and H. van Horn, Astrophys. J. 155, 183
-(1970).
-[8] O. Barrera, D. Bombac, Y. Chen, T. D. Da, E. Galindo-
-Nava, P. Gong, D. Haley, R. Horton, I. Katzarov, J. R.
-Kermode, C. Liverani, M. Stopher, and F. Sweeney,
-Journal of Materials Science 53, 6251 (2018).
-[9] R. Kirchheim, Acta Materialia 55, 5129 (2007).
-[10] Y. Fukai, The Metal{Hydrogen System, 2nd ed.
-(Springer-Verlag, Berlin Heidelberg, 2005).
-[11] K. Takai, H. Shoda, H. Suzuki, and M. Nagumo, Acta
-Mater. 56, 5158 (2008).
-[12] Y. Tateyama and T. Ohno, Physical Review B 67, 174105
-(2003).
-[13] W. Counts, C. Wolverton, and R. Gibala, Acta Materialia
-58, 4730 (2010).
-[14] A. T. Paxton, Materials Science and Technology 30, 1063
-(2014).
-[15] M. A. Morales, J. M. McMahon, C. Pierleoni, and D. M.
-Ceperley, Phys. Rev. Lett. 110, 065702 (2013).
-[16] E. A. Engel, B. Monserrat, and R. J. Needs, Physical
-Review X 5, 021033 (2015).
-[17] M. Rossi, P. Gasparotto, and M. Ceriotti, Physical review
-letters 117, 115702 (2016).
-[18] H. Kimizuka, H. Mori, and S. Ogata, Phys. Rev. B 83,
-094110 (2011).
-[19] A. Hassanali, F. Giberti, J. Cuny, T. D. Kuhne, and
-M. Parrinello, Proc. Natl. Acad. Sci. USA 110, 13723
-(2013).
-[20] M. Rossi, M. Ceriotti, and D. E. Manolopoulos, J. Phys.
-Chem. Letters 7, 3001 (2016).
-[21] A. T. Paxton and M. W. Finnis, Phys. Rev. B 77, 024428
-(2008).
-[22] A. T. Paxton and C. Elsasser, Phys. Rev. B 87, 224110
-(2013).
-[23] R. P. Feynman and A. R. Hibbs, Quantum Mechanics
-and Path Integrals (McGraw-Hill, New York, 1964).
-[24] D. Chandler and P. G. Wolynes, J. Chem. Phys. 74, 4078
-(1981).
-[25] M. Parrinello and A. Rahman, J. Chem. Phys. 80, 860
-(1984).
-[26] M. Ceriotti, M. Parrinello, T. E. Markland, and D. E.
-Manolopoulos, J. Chem. Phys. 133, 124104 (2010).
-[27] J. Cao and G. A. Voth, J. Chem. Phys. 101, 6168 (1994).
-[28] I. R. Craig and D. E. Manolopoulos, J. Chem. Phys. 121,
-3368 (2004).
-[29] M. Rossi, M. Ceriotti, and D. E. Manolopoulos, J. Chem.
-Phys. 140, 234116 (2014).
-[30] S. Habershon, D. E. Manolopoulos, T. E. Markland, and
-T. F. Miller, Annual review of physical chemistry 64, 387
-(2013).
-[31] H. Kimizuka, H. Mori, and S. Ogata, Phys. Rev. B 83,
-094110 (2011).
-[32] M. Nagano, Y. Hayashi, N. Ohtani, M. Isshiki, and
-K. Igaki, Scr. Metall. 16, 973 (1982).
-[33] K. Kiuchi and R. B. McLellan, Acta Metall. 31, 961
-(1983).
-[34] I. H. Katzarov and A. T. Paxton, in Proceedings of the
-2nd International Conference on Steel and Hydrogen,
-edited by L. Duprez (OCAS, Ghent, 2014) p. F01, ISBN:
-9789081794213.
-[35] A. T. Paxton and I. H. Katzarov, Acta Mater. 103, 71
-(2016).
-[36] L. Malerba, M. Marinica, N. Anento, C. Bjrkas,
-H. Nguyen, C. Domain, F. Djurabekova, P. Olsson,
-K. Nordlund, A. Serra, D. Terentyev, F. Willaime,
-and C. Becquart, Journal of Nuclear Materials 406, 19
-(2010).
-[37] L. Wang, M. Ceriotti, and T. E. Markland, J. Chem.
-Phys. 141, 104502 (2014).
-[38] A. T. Paxton and C. Elsasser, Phys. Rev. B 82, 235125
-(2010).
-[39] C. P. Flynn and A. M. Stoneham, Phys. Rev. B 3, 2819
-(1971).
-[40] In our experience, while surprising, a 16-atom unit cell
-is fully adequate for capturing the diusion and trapping
-of H in -Fe. This is evidenced by our quantitative
-agreement in the diusivity both from experiment and
-in comparison with published EAM ndings which have
-the same activation energy and which use much larger
-supercells [31]. The ability to use the small unit cell is a
-considerable benet since the number of force evaluations
-required for determining the diusion coecient and the
-trapping energy of H in the Fe systems is on the order of
-107, which is beyond the capability of ab initio molecular
-dynamics.
-[41] B. Cheng and M. Ceriotti, Physical Review B 97, 054102
-(2018).
-[42] W. Fang, J. Chen, M. Rossi, Y. Feng, X.-Z. Li, and
-A. Michaelides, The journal of physical chemistry letters
-7, 2125 (2016).
-[43] O. Y. Vekilova, D. Bazhanov, S. Simak, and I. Abrikosov,
-Physical Review B 80, 024101 (2009).
-[44] G. Lu and E. Kaxiras, Physical review letters 94, 155501
-(2005).
-[45] D. F. Johnson and E. A. Carter, Journal of Materials
-Research 25, 315 (2010).
-[46] K. Ohsawa, K. Eguchi, H. Watanabe, M. Yamaguchi,
-and M. Yagi, Physical Review B 85, 094102 (2012).
-[47] K.-T. Kim, S.-I. Pyun, and E. M. Riecke, Journal of
-materials science letters 4, 624 (1985).
-[48] H. K. D. H. Bhadeshia, ISIJ international 56, 24 (2016).
-[49] S. Myers, S. Picraux, and R. Stoltz, Journal of Applied
-Physics 50, 5710 (1979).
-[50] F. Besenbacher, S. Myers, P. Nordlander, and
-J. Nrskov, Journal of applied physics 61, 1788 (1987).
+Molecular Vibrational Polariton Dynamics: What Can Polaritons Do?
+Wei Xiong*
+Cite This: Acc. Chem. Res. 2023, 56, 776−786 Read Online
+ACCESS Metrics & More Article Recommendations
+CONSPECTUS: When molecular vibrational modes strongly couple to
+virtual states of photonic modes, new molecular vibrational polariton
+states are formed, along with a large population of dark reservoir
+modes. The polaritons are much like the bonding and antibonding
+molecular orbitals when atomic orbitals form molecular bonds, while
+the dark modes are like nonbonding orbitals. Because the polariton
+states are half-matter and half-light, whose energy is shifted from the
+parental states, polaritons are predicted to modify chemistry under
+thermally activated conditions, leading to an exciting and emerging field
+known as polariton chemistry that could potentially shift paradigms in
+chemistry. Despite several published results supporting this concept,
+the chemical physics and mechanism of polariton chemistry remain
+elusive. One reason for this challenge is that previous works cannot
+differentiate polaritons from dark modes. This limitation makes delineating the contributions to chemistry from polaritons and dark
+states difficult. However, this level of insight is critical for developing a solid mechanism for polariton chemistry to design and predict
+the outcome of strong coupling with any given reaction. My group addressed the challenge of differentiating the dynamics of
+polaritons and dark modes by ultrafast two-dimensional infrared (2D IR) spectroscopy. Specifically, (1) we found that polaritons can
+facilitate intra- and intermolecular vibrational energy transfer, opening a pathway to control vibrational energy flow in liquid-phase
+molecular systems, and (2) by studying a single-step isomerization event, we verified that indeed polaritons can modify chemical
+dynamics under strong coupling conditions, but in contrast, the dark modes behave like uncoupled molecules and do not change the
+dynamics. This finding confirmed the central concept of polariton chemistry: polaritons modify the potential energy landscape of
+reactions. The result also clarified the role of dark modes, which lays a critical foundation for designing cavities for future polariton
+chemistry. Aside from using 2D IR spectroscopy to study polariton chemistry, we also used the same technique to develop molecular
+polaritons into a potential quantum simulation platform. We demonstrated that polaritons have Rabi oscillations, and using a
+checkerboard cavity design, we showed that polaritons could have large nonlinearity across space. We further used the checkerboard
+polaritons to simulate coherence transfer and visualize it. A unidirectional coherence transfer was observed, indicating non-
+Hermitian dynamics. The highlighted efforts in this Account provide a solid understanding of the capability of polaritons for
+chemistry and quantum information science. I conclude this Account by discussing a few challenges for moving polariton chemistry
+toward being predictable and making the polariton quantum platform a complement to existing systems.
+■ KEY REFERENCES
+• Xiang, B.; Ribeiro, R. F.; Dunkelberger, A. D.; Wang, J.; Li,
+Y.; Simpkins, B. S.; Owrutsky, J. C.; Yuen-Zhou, J.; Xiong,
+W. Two-Dimensional Infrared Spectroscopy of Vibrational
+Polaritons Proc. Natl. Acad. Sci. U. S. A. 2018, 115,
+4845−4850.1 This work demonstrated that 2D IR spectroscopy
+can resolve polaritons and dark modes based on their
+distinct spectral features and verified that dark modes have
+optical strength due to chemical heterogeneity.
+• Xiang, B.; Ribeiro, R. F.; Du, M.; Chen, L.; Yang, Z.;
+Wang, J.; Yuen-Zhou, J.; Xiong, W. Intermolecular
+Vibrational Energy Transfer Enabled by Microcavity
+Strong Light−Matter Coupling. Science 2020, 368, 665−
+667.2 This work for the first time showed that by vibrational
+strong coupling (VSC) to photonic cavity modes, polaritons
+could enable vibrational energy transfer between different
+molecules.
+• Chen, T.; Du, M.; Yang, Z.; Yuen-Zhou, J.; Xiong, W.
+Cavity-Enabled Enhancement of Ultrafast Intramolecular
+Vibrational Redistribution over Pseudorotation. Science
+2022, 378, 790−794.3 This work unambiguously demonstrated
+that under VSC, polaritons can modify single-step
+barrier crossing dynamics by suppressing it and promoting an
+Received: December 1, 2022
+Published: March 17, 2023
+pubs.acs.org/accounts Article
+© 2023 The Author. Published by
+American Chemical Society
+776
+https://doi.org/10.1021/acs.accounts.2c00796
+Acc. Chem. Res. 2023, 56, 776−786
+Downloaded via 118.218.183.142 on December 11, 2023 at 13:46:25 (UTC).
+See https://pubs.acs.org/sharingguidelines for options on how to legitimately share published articles.
+alternative intramolecular vibrational redistribution channel,
+whereas the dark modes did not change the dynamics.
+• Xiang, B.; Wang, J.; Yang, Z.; Xiong, W. Nonlinear
+Infrared Polaritonic Interaction between Cavities Mediated
+by Molecular Vibrations at Ultrafast Time Scale. Sci.
+Adv. 2021, 7, eabf6397.4 This work showed that photon
+hopping can enable nonlinear interactions of polaritons with
+each other across space, enabling its application for future
+quantum information technologies.
+■ MOTIVATIONS AND BACKGROUND
+When molecular modes strongly couple to photonic cavity
+modes, such that the molecules exchange energy with photons at
+higher rates than their corresponding dissipation, the light−
+matter interactions are in the strong coupling regime, forming
+so-called polaritons.5−7 While it is an established concept in
+quantum electrodynamics, the polariton concept has recently
+caught the attention of chemistry. Ebbesen pioneered this
+concept that when molecular vibrational modes are strongly
+coupled with the cavity modes and form molecular vibrational
+polaritons (MVPs), they can modify chemistry8−10 because the
+polaritons have different energy levels and wave functions from
+the composing vibrational modes. This novel concept of
+modifying chemical events by vibrational strong coupling
+(VSC) was supported by several research results using multiple
+techniques, including IR, UV−vis, and mass spectrometry,11−14
+which have led to an exciting emerging new field termed
+polariton chemistry.
+Given the great promise of polariton chemistry, it is necessary
+to have a clear mechanism of polariton chemistry that allows
+predictions of whether VSC can influence a given reaction and
+eventually leads to rational designs of photonic cavities to
+catalyze specific reactions.15,16 The understanding of polariton
+chemistry is still not fully developed, partly because it is new and
+partly because of a fundamental gap between experiment and
+theory, which I explain below. Because the dipolar interactions
+between a single molecule and the cavity mode (g0) are often not
+strong enough, it requires an ensemble of N molecules to
+interact with the cavity mode and reach VSC collectively. The
+collective coupling strength is proportional to g N 0 , and it
+requires N ≈ 1010 to reach the so-called collective VSC regime.
+The consequence of the collective VSC is that there are also N −
+1 dark modes that have no photonic components in their wave
+functions10,16−19 and resemble localized (or semilocalized20−23)
+molecular modes (Figure 1A). Thus, dark modes are not
+expected to influence chemical processes. Because the N − 1
+dark modes significantly outnumber the two polariton modes,
+chemical reactions should be dictated by dark modes, thereby
+leading to little changes to reactions. Indeed, several theoretical
+works on the collective VSC regime did observe little changes to
+chemical reactions,24−30 and a couple of experimental works
+reported null results.31,32 On the other hand, theoretical works
+on the single-molecule VSC regime,33−36 i.e., making a single
+molecule strongly coupled to the cavity modes, provided
+unambiguous evidence to support that polaritons can modify
+reactions (and there were no dark modes in this case), agreeing
+with some experiments in the collective VSC regime.11−14 Given
+the myriad of evidence supporting polariton chemistry in the
+collective coupling regime (despite a few reports on issues of
+reproducibility31,32) and the unavoidable influence of dominating
+dark modes from the theory perspective, it is critical to
+answer the question of how the interplays between polaritons
+and dark modes can lead to polariton chemistry. Pertinent
+questions include the following: What can polaritons do? Can
+dark modes change chemistry? How does VSC influence the
+vibrational energy dynamics to affect reactions? This challenge
+emphasizes the importance of differentiating polaritons from
+dark modes and following their dynamics to understand the
+roles of polaritons and dark modes in modifying chemistry. In
+this Account, I will discuss ultrafast polariton dynamic research
+from my group and highlight what we have learned about the
+capabilities of polaritons (Figure 1B) and conclude with an
+outlook of remaining challenges (Figure 1C). ■ 2D IR SPECTROSCOPY FOR VIBRATIONAL
+POLARITONS
+Two-dimensional infrared (2D IR) spectroscopy,37−48 a
+coherent multidimensional ultrafast nonlinear optical technique,
+is well-suited for differentiating polaritons and dark reservoir
+modes. After the first report of the ultrafast IR pump−probe
+study of MVPs by Dunkelberger, Owrutsky, and co-workers49
+and inspired by theoretical works,50 our group collaborated with
+the Naval Research Laboratory group to implement 2D IR
+spectroscopy to study polariton dynamics.1,51 We showed that
+2D IR spectroscopy has unique capabilities to resolve dark
+modes from polariton states. This method has since been
+adopted to study pure polaritonic responses and polaritons in
+open cavity systems.52−54
+Figure 1. Molecular vibrational polaritons, what they can do, and a few
+remaining challenges. (A) Energy diagram of polaritons (UP and LP)
+and dark modes (D) under the collective VSC regime. (B) Chemical
+physics enabled by polaritons. (C) A few challenges in this field.
+Accounts of Chemical Research pubs.acs.org/accounts Article
+https://doi.org/10.1021/acs.accounts.2c00796
+Acc. Chem. Res. 2023, 56, 776−786
+777
+2D IR spectroscopy uses a three-pulse pulse sequence to
+probe the evolution of molecular vibrational energy in the
+system (Figure 2A). The first pulse prepares the system into a
+vibrational coherence state that is converted to either a
+population or coherence state by the second pulse. After waiting
+for a certain time delay (t2), the third pulse (probe) relaunches
+the vibrational coherences, emitting an IR signal. The IR signal is
+heterodyned by a local oscillator pulse (often the same third
+pulse), dispersed by a spectrograph, and detected by a mercury−
+cadmium−telluride array detector. The measured IR spectrum
+(whose axis is noted as ωprobe or ω3) encodes the latter
+coherence dynamics along t3 after the third IR pulse interaction.
+We scan the time delay between the first and second IR pulses
+(t1) and record the corresponding pump−probe spectrum to
+characterize the first vibrational coherence dynamics. The t1
+series pump−probe dynamics is Fourier transformed into a
+spectrum along ωpump or ω1. Thus, the correlation between
+ωpump and ωprobe can be plotted as a 2D map, known as a 2D IR
+spectrum. One advantage of 2D IR spectroscopy versus a
+pump−probe experiment is that molecular resonances are
+distinguished along ωpump. Thus, it can differentiate the initial
+quantum states and follow their evolutions by scanning the delay
+time t2.
+We showed that 2D IR spectroscopy has an advantage of
+differentiate various quantum states on polariton systems
+(Figure 2B). Below, I use the polaritons created by the
+asymmetric vibrational modes of W(CO)6 under VSC as an
+example. The 2D IR spectrum showed two clear peaks along the
+diagonal, representing the UP and LP resonances, and crosspeaks
+indicating the polaritons interacting with each other
+(Figure 2C,D, bottom). However, the more striking feature
+(gray boxes) is that there are peaks at ω1 = ωdark, suggesting that
+the dark modes are also excited and interacting with polaritons.1
+The dark modes are visible because of the chemical
+inhomogeneity, as theory predicted.55 Nevertheless, the fact
+that the 2D IR spectrum has distinct polariton and dark mode
+features along ω1 gives it a unique strength to address the
+existing challenges in polariton chemistry.
+The 2D IR dynamics of MVPs differ from a pure molecular
+system, as the polaritons are hybrids between molecules and
+photons. When t2 is shorter than the lifetime of polaritons
+(tpolariton), the polariton populations and their coherent nonlinear
+interactions dominate, leading to the 2D IR and pump−
+probe peaks with pure absorptive line shape (Figure 2C).51 We
+have attributed the nonlinearity to nonlinear dephasing, and
+further theoretical studies are necessary for this mechanism.
+However, the mechanism is well-understood when t2 is longer
+than the lifetime of the polaritons. In this time regime, polaritons
+decay into the dark reservoir modes. Thus, the dark reservoir
+modes are excited from the ground state, effectively reducing the
+population of molecules to couple to the cavity modes, further
+decreasing the collective coupling strength and, thereby, the
+Rabi splitting. As a result, the UP peak frequency shifts down and
+the LP peak frequency shifts up, leading to derivative features in
+the 2D IR spectrum. The derivative features are difficult to
+resolve in the ω3 = ωLP region because they are overwhelmed by
+the large absorptive feature from the v = 1 →2 transition of the
+dark reservoir modes due to its anharmonicity (Figure
+2D).1,18,49,56 Overall, the early-time coherent dynamics of
+polariton states (t2 < tpolariton) can be useful for potential
+quantum applications. In contrast, the dynamics in the late-time
+regime (t2 > tpolariton) corresponds to the incoherent population
+Figure 2. 2D IR spectroscopy of MVPs. (A) Pulse sequences of 2D IR and pump−probe spectroscopy. (B) 2D IR experimental setup illustration. We
+used a pump−probe geometry where the first two pulses are collinear and compose the pump beam and the third pulse acts as the probe beam and the
+local oscillator. The pump and probe beams approach the samples at the same incident angles to study polaritons with the same energy. (C) (top) At a
+short t2 time delay, the pump−probe spectrum shows absorptive features due to polaritonic nonlinear interactions. (bottom) The 2D IR spectrum
+shows similar absorptive features but clearly shows cross-peaks (at the antidiagonal corner of the dashed box), indicating polariton−polariton
+interactions. (D) (top) At a long t2 time delay, the pump−probe spectrum evolves to a derivative shape at ω3= ωUP because of Rabi splitting
+contraction and an absorptive feature at ω3= ωLP due to the strong 1 → 2 transitions of dark reservoir modes. (bottom) The corresponding 2D IR
+spectrum shows similar features. It is noticeable that there are peaks of dark modes at ω1 = ωdark in the 2D IR spectra (gray boxes in the bottom spectra
+of C and D). Thus, 2D IR spectroscopy can differentiate polaritons and dark modes. (B) and (D) are adapted with permission from ref 1. Copyright
+2018 the authors of ref 1, under exclusive license to the National Academy of Sciences. (C) is from ref 51. CC BY-NC 4.0.
+Accounts of Chemical Research pubs.acs.org/accounts Article
+https://doi.org/10.1021/acs.accounts.2c00796
+Acc. Chem. Res. 2023, 56, 776−786
+778
+dynamics of molecules that participated in polariton formation.
+This incoherent dynamics reveals how the excited polariton
+energy is deposited into pure molecular vibrational modes.
+Because this deposited energy can stay in molecular modes for
+hundreds of picoseconds, this process could thereby influence
+chemical reactions. Below, I will mostly focus on the late-time
+incoherent dynamics related to polariton chemistry and then use
+one section to discuss our efforts to develop MVPs into a
+potential quantum simulation platform.
+■ MVP-MEDIATED VIBRATIONAL ENERGY
+TRANSFER
+The photonic component of polaritons grants them delocalization.
+As a result, it has been shown in the exciton−polariton
+regime that excitonic energy can be delocalized among spatially
+separated films.57,58 It is natural to consider whether such a
+polariton-mediated energy transfer could happen to vibrational
+degrees of freedom. Compared to excitons, the dipole strengths
+of vibrational modes are much smaller, which makes the dipole−
+dipole coupling-mediated energy transfer negligible (with the
+exceptions of a few special systems59,60) (Figure 3A). The lack of
+intermolecular vibrational energy transfer (VET) is evidenced
+by the absence of cross-peaks in the 2D IR spectrum of the
+W(CO)6 and W(13CO)6 mixtures outside the cavity (dashed
+box area in Figure 3B). However, controlling VET is critical in
+manipulating the vibrational energy flow for chemical transformation61
+and transducing signals among biological entities.62
+Thus, it would be an important advance if energy transfer among
+specific vibrational modes could be turned on through
+engineering of VSC (Figure 3C), which would enable many
+new applications.
+To realize it, we tuned the cavity so that its resonance is
+between the asymmetric vibrational modes of W(CO)6 and
+W(13CO)6, leading to a three-polariton system.2,63−65 We
+ensured that the coupling strength was high enough that the UP,
+MP, and LP were composed of the two vibrational modes and
+the single cavity mode, as indicated by their Hopfield
+coefficients. Noticeably, the UP was primarily composed of
+W(CO)6 and the cavity mode, with a small contribution from
+W(13CO)6 (Figure 3D). The molecular compositions of LP
+were flipped compared to UP.
+In the 2D IR spectrum, at long t2, such as t2 = 30 ps, a clear
+cross-peak appeared at ω1 = ωUP, ω3 = ωLP (orange box in Figure
+3E). Because the data were taken long after the polariton relaxed
+to the dark reservoir modes, this cross-peak indicated that when
+UP was excited, its energy could be transferred to the first
+excited state of W(13CO)6, whose v = 1 → 2 transition was
+resonant with LP transitions. The excited population of
+W(13CO)6 was 6 times more than expected if the cross-peak
+was solely due to the W(13CO)6 compositions in the wave
+functions of UP. Thus, this result indicated that VSC enabled a
+significant energy transfer from W(CO)6 to W(13CO)6.
+Furthermore, the efficiency of VET could be enhanced by
+increasing the cavity thickness, which intuitively was because the
+long cavity allowed more cavity (and polariton) lifetime to
+mediate energy transfer. This intermolecular VET occurred only
+as a downhill energy flow, whereas the uphill process was
+missing. It was somewhat surprising as the energy difference
+between polaritons was close to kBT. The downhill process
+could be due to favorable population transfer from UP to a
+manifold of MP states, which remains to be further studied.
+Nevertheless, the preferred downhill transfer should be
+considered for future designs of polariton-mediated energy
+transfer process.
+Figure 3. Polariton-enabled intermolecular vibrational energy transfer. (A) Under normal circumstances, there is no directional VET from W(CO)6
+and W(13CO)6 because it is outcompeted by energy dissipation to the solvents. (B) The absence of intermolecular VET is confirmed in the 2D IR
+spectrum, as there is no cross-peak between the two species. (C) By VSC, intermolecular VET is enabled. (D) The UP is composed mostly of W(CO)6
+(donor, D) and cavity modes, with little contribution from W(13CO)6 (acceptor, A). (E) In the 2D IR spectrum, when UP is excited, a clear cross-peak
+appears at ω3 = ωLP (orange box), indicating that exciting UP can transfer energy to A, as shown in (F), while the cross-peak at ω3 = ωMP (black box)
+reports the energy relaxation to the D channel, as shown in (G). The intensity ratio between the peaks at ω3 = ωLP and ω3 = ωMP suggests that
+intermolecular VET occurred. (A−E) are adapted with permission from ref 2. Copyright 2020 the authors of ref 2, under exclusive license to the
+American Association for the Advancement of Science.
+Accounts of Chemical Research pubs.acs.org/accounts Article
+https://doi.org/10.1021/acs.accounts.2c00796
+Acc. Chem. Res. 2023, 56, 776−786
+779
+■ VIBRATIONAL-POLARITON-MODIFIED
+PSEUDOROTATION DYNAMICS
+A central question in polariton chemistry research involves the
+roles of polaritons and dark modes in modifying chemical
+reactions. The question comes from the prediction that
+polaritons can change the potential energy landscapes of
+reactions and that dark modes behave like regular molecules.16
+However, because of the large density of states of the dark
+reservoir modes in the collective VSC regime, the observation of
+modified chemistry in collective VSC implies that dark modes
+must also influence chemical transformations. There are a
+couple of factors contributing to the present challenge. First,
+most techniques implemented for studying polariton chemistry
+to date only monitor the end products without differentiating
+whether the initial states were polaritons or dark modes. Second,
+nearly all reactions studied were multiple-step complex
+reactions,66 making it difficult to pinpoint the mechanisms.
+My group addressed this challenge by focusing on a singlestep
+chemical transformation, the well-characterized Berry
+pseudorotation of Fe(CO)5,67 using 2D IR spectroscopy, by
+which we could differentiate the polariton-initiated pseudorotation
+dynamics from that initiated by dark reservoir modes.
+The pseudorotation of Fe(CO)5 is an isomerization where the
+axial and equatorial CO ligands exchange with each other,
+making the products identical to the reactants after the
+dynamics. This isomerization also leads to energy exchange
+between the corresponding axial (a2″) and equatorial (e′) modes,
+which is manifested as a cross-peak in the 2D IR spectrum.
+However, an intramolecular vibrational redistribution (IVR)
+channel could also be a minor pathway (Figure 4A, top). Harris,
+Cahoon, and co-workers have characterized its dynamics outside
+of cavities.38
+When strongly coupled to the cavity modes, the a2″ and e′
+modes split into three polariton states (UP, MP, and LP), with
+UP composed mostly by the a2″ mode, LP by the e′ mode, and
+MP as a mixture of the two. Using the cross-peaks at ω3 = ωLP,
+we followed the energy exchange dynamics initiated by pumping
+UP and dark a2″ modes (Figure 4B). When UP was pumped, the
+energy exchange rate (kex) was 0.113 ± 0.009 ps−1, which is
+higher than the counterpart of Fe(CO)5 outside of the cavity (kex
+= 0.084 ± 0.002 ps−1); in contrast, when dark a2″ modes were
+pumped, kex = 0.090 ± 0.006 ps−1, similar the case of outside of
+the cavity. Thus, it appeared that under VSC, only polaritons
+could modify the dynamics, while dark modes could not (Figure
+4C).
+However, the dynamics that caused the acceleration of energy
+exchange deserved more attention because other channels, such
+as IVR, could also lead to energy exchange between the a2″ and e′
+modes and create the same cross-peaks. We differentiated IVR
+and pseudorotation by their initial anisotropy (Figure 5).68
+When IVR occurred, the energy exchange happened between
+two normal modes perpendicular to each other, resulting in an
+initial anisotropy of −0.2 (Figure 5A). When pseudorotation
+occurred, the a2″ mode morphed into the e′ mode without
+changing the orientation of the modes in the molecular frame,
+leading energy exchange between two modes parallel to each
+other. In this case, the initial anisotropy should be 0.4 (Figure
+5B). The actual anisotropy when pumping UP was −0.08, and
+the outside cavity case was 0.06. Thus, qualitatively, we
+concluded that under VSC, it indeed promoted IVR to dominate
+over pseudorotation and accelerated the overall energy
+exchange. Quantitative fitting using kinetic models led to kps =
+Figure 4. Polariton-modified chemical dynamics. (A) Under normal conditions, the Fe(CO)5 molecules favor pseudorotation over IVR (top), but
+under VSC, polaritons accelerate IVR and slow down pseudorotation. (B) The 2D IR spectrum of polaritons (middle) is formed by strong coupling of
+Fe(CO)5 with the cavity modes. The [ωUP, ωLP] (cross-peaks, labeled by a blue square) and [ωUP, ωMP] (diagonal peaks, red square) are used to follow
+the energy exchange between the a2″ and e′ modes. (top) Linear IR spectrum and (bottom) spectral cut atω1 =ωUP of the system. (C) Energy exchange
+dynamics and fits show that under VSC, exciting UP accelerates the energy exchange dynamics (blue), while when the dark a2″ modes are excited
+(gray), the energy exchange remains similar to that outside of cavities (red). Adapted with permission from ref 3. Copyright 2022 the authors of ref 3,
+under exclusive license to the American Association for the Advancement of Science.
+Accounts of Chemical Research pubs.acs.org/accounts Article
+https://doi.org/10.1021/acs.accounts.2c00796
+Acc. Chem. Res. 2023, 56, 776−786
+780
+0.022 ± 0.005 ps−1 and kIVR = 0.043 ± 0.002 ps−1 when UP was
+excited, compared to kps = 0.035 ±0.001 ps−1 and kIVR = 0.024±
+0.001 ps−1 when the molecules were outside of the cavity
+(Figure 5C,D). Thus, VSC not only promoted IVR but also
+decelerated pseudorotation compared to the case without VSC.
+However, dark modes did not have such an effect. The
+reflectivity of distributed Bragg reflector (DBR) optics can
+depend on the polarizations of incoming beams, which may
+influence the anisotropy. In this experiment, such an effect was
+small, as the anisotropy of diagonal peaks remained close to the
+theoretical value of 0.4. Clearly, polaritons in VSC can promote
+intramolecular or intermolecular VET. The physical origin of
+suppressing pseudorotation could be loss of its driving force due
+to IVR or being hindered by the excited phonons. Other driving
+forces, such as excitation to hot vibrational modes,69 could also
+play a role. This VSC-modified dynamics was just recently
+supported by a hybrid quantum-mechanical/molecular-mechanical
+cavity molecular dynamics scheme,70 which could
+provide critical mechanistic insights in the future. The
+reflectivity of distributed Bragg reflector (DBR) optics can
+depend on the polarizations of incoming beams, which may
+influence the anisotropy. In this experiment, such an effect was
+small, as the anisotropy of diagonal peaks remained close to the
+theoretical value of 0.4.
+This work unambiguously demonstrated that polaritons can
+influence chemical transformationsthe central concept in
+polariton chemistrybut also clarified that the dark modes
+behave like uncoupled molecules. Thus, it added a pillar to the
+polariton chemistry research and pointed out that future
+enhancement of polariton chemistry could lie in miniaturizing
+the cavity volume to reduce dark modes.71−73
+Figure 5. Anisotropy of energy exchange dynamics. (A) Depiction of the eigenvectors for the a2″ and doubly degenerate e′ vibrational modes of
+Fe(CO)5. IVR leads to energy transfer between modes perpendicular to each other, leading to an initial anisotropy of 0.4. (B) When the energy
+exchange is through pseudorotation, the energy transfer is between two dipoles parallel to each other, resulting in an initial anisotropy of −0.2. (C) The
+anisotropy of the energy exchange cross-peak indicates that the dynamics is dominated by pseudorotation outside of the cavity. (D) Under VSC, the
+anisotropy indicates that exciting UP accelerates IVR and suppresses pseudorotation. Adapted with permission from ref 3. Copyright 2022 the authors
+of ref 3, under exclusive license to the American Association for the Advancement of Science.
+Accounts of Chemical Research pubs.acs.org/accounts Article
+https://doi.org/10.1021/acs.accounts.2c00796
+Acc. Chem. Res. 2023, 56, 776−786
+781
+■ TOWARD VIBRATIONAL-POLARITON-BASED
+QUANTUM TECHNOLOGY
+While strong coupling to photons can change molecular
+properties, VSC can also modify photonic properties. One
+direct result is the strong optical nonlinearities of photons that
+otherwise would not exist. The strong optical nonlinearity could
+enable the use of photons/polaritons as quantum bits (qubits).
+My group has shown that nonlinearity can be modulated by
+simply controlling the cavity size. More importantly, we
+observed Rabi oscillations between LP and UP (Figure
+6A).51,74 The Rabi oscillation only lasted for about 5 ps, as
+determined by the Q factor of the cavity. However, it indicated
+that coherence between LP and UP could be prepared and act as
+a qubit.
+We have made a few steps to prepare vibrational polaritons as
+a new quantum technology platform by showing that polaritons
+can nonlinearly interact with each other when sitting in different
+cavities.4,75 We used photolithography and deposition techniques
+to create a checkerboard-pattern DBR, with adjacent
+squares having an ∼200 nm height difference. Thus, when the
+patterned DBR was paired with a flat DBR, they formed
+neighboring cavities with different longitudinal thicknesses and
+resonant frequencies (Figure 6B,C). Each cavity could form its
+own UP and LP with W(CO)6, resulting in four polariton peaks
+in the linear spectrum (Figure 6D).
+Using 2D IR spectroscopy, we resolved cross-peaks indicating
+that when the polaritons in cavity A were excited, the polaritons
+in cavity B responded to the excitation (green shaded area in
+Figure 7A). Thus, nonlinear interactions exist between polaritons
+in different cavities. The existence of nonlinearity across
+space arises because of the photonic cavity evanescent wave and
+the large molecular nonlinearity.
+We used this platform to simulate and visualize coherence
+transfer between cavities.76 Coherence transfer has been
+considered important in the energy relay of biological and
+chemical systems.77,78 The natural spatial (nanometers) and
+temporal (femtosecond) scales of coherence transfer made it
+difficult to resolve simultaneously in both domains. The
+checkerboard polariton platform, whose cavity lateral separation
+was 50 μm, made it possible to excite coherence or population in
+one cavity and watch it evolve in space and time (Figure 7B). We
+spatially visualized the polariton signals by converting the 2D IR
+spectrometer into a spectromicroscope that could resolve the
+spectra along the horizontal dimension of the detector and the
+spatial location of the signals vertically (Figure 7D). This new
+instrument thus allowed the coherence dynamics to be tracked
+in spatial, temporal, and frequency domains.
+When the |UPA⟩⟨LPA| coherence was prepared in cavity A, it
+launched Rabi oscillations in spectral peaks located at ω3 = ωUPA
+or ωLPA, but quickly the oscillations also appeared in peaks at ω3
+= ωUPB or ωLPB. This result indicated that coherence from cavity
+A was transferred to cavity B (Figure 7C, top). The spatial−
+temporal plot confirmed this conclusion. The Rabi oscillation at
+ω3 = ωUPA was initially launched in cavity A and quickly
+transferred to cavity B (Figure 7E). Thereby, coherences could
+be transferred spatially among the vibrational polaritons on the
+checkerboard cavity.
+Interestingly, this transfer did not always occur. For example,
+when |UPB⟩⟨LPB| coherence was prepared in cavity B, there was
+no such transfer to cavity A (Figure 7C, bottom). The
+unidirectional coherence transfer suggested non-Hermitian
+dynamics. The reason for non-Hermitian dynamics was that at
+the same in-plane momentum, the photons that drove the
+coherence transfer always had higher energy when residing in
+cavity A than in cavity B. Thus, it was energetically favorable for
+photons from A to scatter to the state of cavity B at higher
+momentum without any energy penalty (Figure 7F). However,
+the same could not happen to photons at cavity B near zero inplane
+momentum. When the same experiments occurred at high
+momentum, the coherence transfer became allowed in both
+directions (see the Supporting Information of ref 76). ■ OUTLOOK AND KEY FUTURE CHALLENGES
+Polaritons, a concept from quantum electrodynamics, have great
+potential to add a new paradigm to chemistry. Currently, many
+results have phenomenologically demonstrated the feasibility of
+this direction. It is critical to support this new phenomenon with
+Figure 6. Polariton coherence and the checkerboard cavity. (A) UP and LP oscillate at the Rabi frequency. (B) A pair of cavity modes are created by
+preparing square-shaped extrusions on the cavity optics, forming a checkerboard pattern. (C) The checkerboard pattern optic and a flat mirror can
+form cavities with different resonant frequencies that spatially overlap through evanescent waves. (D) When strongly coupled with the asymmetric
+mode of W(CO)6, each cavity forms its own UP and LP. The linear spectrum of the system is shown at the right. From ref 4. CC BY-NC 4.0.
+Accounts of Chemical Research pubs.acs.org/accounts Article
+https://doi.org/10.1021/acs.accounts.2c00796
+Acc. Chem. Res. 2023, 56, 776−786
+782
+a solid theoretical and mechanistic foundation. The works from
+our group used ultrafast 2D IR spectroscopy to follow the
+vibrational energy evolution inside VSC systems in a stateresolved
+manner. The results provide insights into what
+polaritons can do: First, polaritons can open and promote
+vibrational energy transfers, either within or between molecules;
+second, polaritons can also modify the dynamics of single-step
+chemical transformations; finally, inside of VSC, the dark modes
+do not show clear evidence of changing chemical dynamics. The
+impact of these results includes that they are unified with many
+theoretical predictions and lead to rational directions to improve
+polariton chemistry.
+However, all of the experiments discussed here used an
+external IR pulse to pump the polaritons, while other VSCmodified
+experiments were carried out under thermally
+activated conditions, namely, there was no external photon
+input. The results of ultrafast spectroscopy here could be
+connected to the thermally activated VSC reactions by
+estimating the population of thermally excited polariton states.
+However, it is expected that the population is too small and
+insufficient to explain the thermally activated VSC reactions.
+Further connections remain to be explored. Furthermore, the
+detuning dependence of polariton chemistry,12 another outstanding
+experimental observation, remains to be better
+understood to explain why the energy match between the zero
+in-plane momentum cavity mode and vibrational modes
+determined the polariton chemistry; in contrast, cavity modes
+at higher momentum do not seem to matter. The recently
+Figure 7. Intercavity polaritonic interactions and coherence transfer. (A) The 2D IR spectrum has cross-peaks (labeled by green shades), indicating
+that when polaritons in cavity A (Figure 6B) are excited, they also perturb polaritons in cavity B. (B) Schematic of the coherence transport experiment
+using the checkerboard polariton platform. The shaped IR pulses prepare polariton coherences in cavity A, and the coherences then are transferred to B
+and are followed by probe pulses. (C) Unidirectional coherence transfer is seen when cavity A coherences, such as |UPA⟩⟨LPA|, are transferred to cavity
+B and trigger coherence oscillations of polaritons in cavity B (top). The same coherence transfer does not happen when coherences, such as |UP⟩⟨LPB|,
+are prepared in cavity B (bottom). (D) 2D IR imaging setup allows resolution of the spectral peak frequency along the horizontal direction and the
+spatial location of polaritons along the vertical direction. (E) Ultrafast spectral image showing that after |UPA⟩⟨LPA| is prepared in cavity A, it is indeed
+transferred to polaritons in cavity B across space. (F) The unidirectional coherence transfer can be explained by the cavity dispersion curve. Cavity
+mode A always has higher energy than cavity mode B at the same momentum. Thus, photons in A can scatter to cavity B with a large momentum but the
+same energy and then relax to the bottom of the dispersion curve. The opposite is less favorable due to the energy penalty. (A) is from ref 4. CC BY-NC
+4.0. (B−E) are adapted with permission from ref 76. Copyright 2021 Wiley-VCH.
+Accounts of Chemical Research pubs.acs.org/accounts Article
+https://doi.org/10.1021/acs.accounts.2c00796
+Acc. Chem. Res. 2023, 56, 776−786
+783
+developed zero-dispersion polariton modes in a confined
+cavity79 could further provide insight into the role of the
+dispersion curve in VSC-modified chemistry.
+On the quantum technology side, we showed that polaritons
+can interact nonlinearly across space, similar to what is
+demonstrated in trapped ions or cold atoms, but under ambient
+conditions. It is natural to extend the checkerboard systems into
+a more sophisticated design to simulate natural systems with
+energy and coherence transfers or to achieve quantum effects,
+such as topological states.80 Obviously, the roadblock is
+decoherence. Fortunately, the vibrational coherence oscillates
+at the femtosecond time scale, which requires a much shorter
+coherence lifetime to achieve the same figure of merit of existing
+quantum systems. Decoherence could be alleviated by using
+molecular crystals or operating at a lower temperature (above
+cryogenic) where bath motions are slowed down or frozen.
+Another important development would be achieving VSC using
+nanocavities, which could significantly reduce the number of
+molecules needed for MVP formation and amplify the quantum
+features of the systems. Together with these developments, I
+expect that MVP could complement existing quantum
+information platforms.
+Overall, molecular vibrational polaritons are an exciting field
+that integrates photonics into molecular science. The
+fundamental chemical physics of MVPs is critical to make this
+field a potential fast lane to advance chemistry and quantum
+technology.
+■ AUTHOR INFORMATION
+Corresponding Author
+Wei Xiong − Department of Chemistry and Biochemistry,
+University of California, San Diego, La Jolla, California
+92093-0358, United States; orcid.org/0000-0002-7702-
+0187; Email: w2xiong@ucsd.edu
+Complete contact information is available at:
+https://pubs.acs.org/10.1021/acs.accounts.2c00796
+Funding
+The work presented here was supported by the Air Force Office
+of Scientific Research (FA9550-17-1-0094, FA9550-18-1-0451
+and FA9550-21-1-0369), the Defense Advanced Research
+Projects Agency (D15AP00107), the National Science
+Foundation (DMR-1848215 and CHE-2101988), and the
+Alfred P. Sloan Foundation (FG-2020-12845).
+Notes
+The author declares no competing financial interest.
+Biography
+Wei Xiong is a Full Professor and Kent Wilson Faculty Scholar in the
+Department of Chemistry and Biochemistry at the University of
+California, San Diego. He received his B.S. degree from Peking
+University in China in 2006. He then joined Prof. Martin Zanni’s group
+at the University of Wisconsin, Madison, and completed his Ph.D.
+degree in 2011. At Madison, he focused on developing novel 2D
+vibrational spectroscopy methods (transient 2D IR and heterodyne 2D
+SFG spectroscopy) to study molecules on solid-state material surfaces.
+He then moved to the University of Colorado, Boulder, in 2011, where
+he worked with Prof. Margaret Murnane and Henry Kapteyn to develop
+the table-top XUV source for ultrafast measurements and time-resolved
+photoelectron spectroscopy for nanoparticles. He joined the faculty at
+the University of California, San Diego in 2014. At UCSD, his research
+focuses on using and developing ultrafast nonlinear spectroscopic and
+imaging tools to reveal molecular structures and dynamics of materials,
+including ultrafast dynamics of polaritonic systems, guest molecule
+adsorptions in self-assembled materials, and femtosecond charge
+transfer dynamics on organic material interfaces.
+■ ACKNOWLEDGMENTS
+I thank Dr. B. Xiang for the seminal contributions to the work
+discussed here and Dr. T.-T. Chen, Mr. Z. Yang, Dr. J. Wang,
+and all of the other group members who contributed to the
+polariton research in my group. I am also grateful for all of the
+inspiring discussions with Dr. Owrutsky, Dr. Dunkelberger, Dr.
+Simpkins, Prof. Yuen-Zhou, Prof. Y.-Z. You, Prof. Ribeiro, and
+Dr. M. Du.
+■ REFERENCES
+(1) Xiang, B.; Ribeiro, R. F.; Dunkelberger, A. D.; Wang, J.; Li, Y.;
+Simpkins, B. S.; Owrutsky, J. C.; Yuen-Zhou, J.; Xiong, W. Two-
+Dimensional Infrared Spectroscopy of Vibrational Polaritons. Proc.
+Natl. Acad. Sci. U. S. A. 2018, 115, 4845−4850.
+(2) Xiang, B.; Ribeiro, R. F.; Du, M.; Chen, L.; Yang, Z.; Wang, J.;
+Yuen-Zhou, J.; Xiong, W. Intermolecular Vibrational Energy Transfer
+Enabled by Microcavity Strong Light−Matter Coupling. Science 2020,
+368, 665−667.
+(3) Chen, T.-T.; Du, M.; Yang, Z.; Yuen-Zhou, J.; Xiong, W. Cavity-
+Enabled Enhancement of Ultrafast Intramolecular Vibrational Redistribution
+over Pseudorotation. Science 2022, 378, 790−794.
+(4) Xiang, B.; Wang, J.; Yang, Z.; Xiong, W. Nonlinear Infrared
+Polaritonic Interaction between Cavities Mediated by Molecular
+Vibrations at Ultrafast Time Scale. Sci. Adv. 2021, 7, eabf6397.
+(5) Törmä, P.; Barnes, W. L. Strong Coupling between Surface
+Plasmon Polaritons and Emitters: A Review. Rep. Prog. Phys. 2015, 78,
+013901.
+(6) Khitrova, G.; Gibbs, H. M.; Jahnke, F.; Kira, M.; Koch, S. W.
+Nonlinear Optics of Normal-Mode-Coupling Semiconductor Microcavities.
+Rev. Mod. Phys. 1999, 71, 1591−1639.
+(7) Deng, H.; Haug, H.; Yamamoto, Y. Exciton-Polariton Bose−
+Einstein Condensation. Rev. Mod. Phys. 2010, 82, 1489−1537.
+(8) Ebbesen, T. Hybrid Light−Matter States in a Molecular and
+Material Science Perspective. Acc. Chem. Res. 2016, 49, 2403.
+(9) Garcia-Vidal, F. J.; Ciuti, C.; Ebbesen, T. W. Manipulating Matter
+by Strong Coupling to Vacuum Fields. Science 2021, 373, eabd0336.
+(10) Nagarajan, K.; Thomas, A.; Ebbesen, T. W. Chemistry under
+Vibrational Strong Coupling. J. Am. Chem. Soc. 2021, 143, 16877−
+16889.
+(11) Thomas, A.; George, J.; Shalabney, A.; Dryzhakov, M.; Varma, S.
+J.; Moran, J.; Chervy, T.; Zhong, X.; Devaux, E.; Genet, C.; Hutchison,
+J. A.; Ebbesen, T. W. Ground-State Chemical Reactivity under
+Vibrational Coupling to the Vacuum Electromagnetic Field. Angew.
+Chem., Int. Ed. 2016, 55, 11462−11466.
+(12) Thomas, A.; Lethuillier-Karl, L.; Nagarajan, K.; Vergauwe, R. M.
+A. A.; George, J.; Chervy, T.; Shalabney, A.; Devaux, E.; Genet, C.;
+Moran, J.; Ebbesen, T. W. Tilting a Ground-State Reactivity Landscape
+by Vibrational Strong Coupling. Science 2019, 363, 615−619.
+(13) Hirai, K.; Takeda, R.; Hutchison, J. A.; Uji-i, H. Modulation of
+Prins Cyclization by Vibrational Strong Coupling. Angew. Chem., Int.
+Ed. 2020, 59, 5332−5335.
+(14) Ahn, W.; Herrera, F.; Simpkins, B. Modification of Urethane
+Addition Reaction via Vibrational Strong Coupling. ChemRxiv 2022,
+DOI: 10.26434/chemrxiv-2022-wb6vs.
+(15) Rider, M. S.; Barnes, W. L. Something from Nothing: Linking
+Molecules with Virtual Light. Contemp. Phys. 2021, 62, 217−232.
+(16) Li, T. E.; Cui, B.; Subotnik, J. E.; Nitzan, A. Molecular
+Polaritonics: Chemical Dynamics under Strong Light-Matter Coupling.
+Annu. Rev. Phys. Chem. 2022, 73, 43−71.
+(17) Ribeiro, R. F.; Martínez-Martínez, L. A.; Du, M.; Campos-
+Gonzalez-Angulo, J.; Yuen-Zhou, J. Polariton Chemistry: Controlling
+Accounts of Chemical Research pubs.acs.org/accounts Article
+https://doi.org/10.1021/acs.accounts.2c00796
+Acc. Chem. Res. 2023, 56, 776−786
+784
+Molecular Dynamics with Optical Cavities. Chem. Sci. 2018, 9, 6325−
+6339.
+(18) Xiang, B.; Xiong, W. Molecular Vibrational Polariton: Its
+Dynamics and Potentials in Novel Chemistry and Quantum
+Technology. J. Chem. Phys. 2021, 155, No. 050901.
+(19) Dunkelberger, A. D.; Simpkins, B. S.; Vurgaftman, I.; Owrutsky, J.
+C. Vibration-Cavity Polariton Chemistry and Dynamics. Annu. Rev.
+Phys. Chem. 2022, 73, 429−451.
+(20) Du, M.; Yuen-Zhou, J. Catalysis by Dark States in
+Vibropolaritonic Chemistry. Phys. Rev. Lett. 2022, 128, No. 096001.
+(21) Scholes, G. D. Polaritons and Excitons: Hamiltonian Design for
+Enhanced Coherence. Proc. R. Soc. A 2020, 476, 20200278.
+(22) Chávez, N. C.; Mattiotti, F.; Méndez-Bermúdez, J. A.; Borgonovi,
+F.; Celardo, G. L. Disorder-Enhanced and Disorder-Independent
+Transport with Long-Range Hopping: Application to Molecular Chains
+in Optical Cavities. Phys. Rev. Lett. 2021, 126, No. 153201.
+(23) Botzung, T.; Hagenmüller, D.; Schütz, S.; Dubail, J.; Pupillo, G.;
+Schachenmayer, J. Dark State Semilocalization of Quantum Emitters in
+a Cavity. Phys. Rev. B 2020, 102, No. 144202.
+(24) Phuc, N. T.; Trung, P. Q.; Ishizaki, A. Controlling the
+Nonadiabatic Electron-Transfer Reaction Rate through Molecular-
+Vibration Polaritons in the Ultrastrong Coupling Regime. Sci. Rep.
+2020, 10, 7318.
+(25) Lindoy, L. P.; Mandal, A.; Reichman, D. R. Resonant Cavity
+Modification of Ground-State Chemical Kinetics. J. Phys. Chem. Lett.
+2022, 13, 6580−6586.
+(26) Yang, P.-Y.; Cao, J. Quantum Effects in Chemical Reactions
+under Polaritonic Vibrational Strong Coupling. J. Phys. Chem. Lett.
+2021, 12, 9531−9538.
+(27) Vurgaftman, I.; Simpkins, B. S.; Dunkelberger, A. D.; Owrutsky, J.
+C. Negligible Effect of Vibrational Polaritons on Chemical Reaction
+Rates via the Density of States Pathway. J. Phys. Chem. Lett. 2020, 11,
+3557−3562.
+(28) Zhdanov, V. P. Vacuum Field in a Cavity, Light-Mediated
+Vibrational Coupling, and Chemical Reactivity. Chem. Phys. 2020, 535,
+No. 110767.
+(29) Li, T. E.; Nitzan, A.; Subotnik, J. E. On the Origin of Ground-
+State Vacuum-Field Catalysis: Equilibrium Consideration. J. Chem.
+Phys. 2020, 152, 234107.
+(30) Du, M.; Campos-Gonzalez-Angulo, J. A.; Yuen-Zhou, J.
+Nonequilibrium Effects of Cavity Leakage and Vibrational Dissipation
+in Thermally Activated Polariton Chemistry. J. Chem. Phys. 2021, 154,
+No. 084108.
+(31) Wiesehan, G. D.; Xiong, W. Negligible Rate Enhancement from
+Reported Cooperative Vibrational Strong Coupling Catalysis. J. Chem.
+Phys. 2021, 155, 241103.
+(32) Imperatore, M. V.; Asbury, J. B.; Giebink, N. C. Reproducibility
+of Cavity-Enhanced Chemical Reaction Rates in the Vibrational Strong
+Coupling Regime. J. Chem. Phys. 2021, 154, 191103.
+(33) Li, X.; Mandal, A.; Huo, P. Cavity Frequency-Dependent Theory
+for Vibrational Polariton Chemistry. Nat. Commun. 2021, 12, 1315.
+(34) Fischer, E. W.; Anders, J.; Saalfrank, P. Cavity-Altered Thermal
+Isomerization Rates and Dynamical Resonant Localization in Vibro-
+Polaritonic Chemistry. J. Chem. Phys. 2022, 156, 154305.
+(35) Sun, J.; Vendrell, O. Suppression and Enhancement of Thermal
+Chemical Rates in a Cavity. J. Phys. Chem. Lett. 2022, 13, 4441−4446.
+(36) Schäfer, C.; Flick, J.; Ronca, E.; Narang, P.; Rubio, A. Shining
+Light on the Microscopic Resonant Mechanism Responsible for Cavity-
+Mediated Chemical Reactivity. arXiv (Quantum Physics), May 25, 2022,
+2104.12429, ver. 4. https://arxiv.org/abs/2104.12429 (accessed 2022-
+12-01).
+(37) Hamm, P.; Lim, M.; DeGrado, W. F.; Hochstrasser, R. M. The
+Two-Dimensional IR Nonlinear Spectroscopy of a Cyclic Pentapeptide
+in Relation to Its Three-Dimensional Structure. Proc. Natl.
+Acad. Sci. U. S. A. 1999, 96, 2036−2041.
+(38) Cahoon, J. F.; Sawyer, K. R.; Schlegel, J. P.; Harris, C. B.
+Determining Transition-State Geometries in Liquids Using 2D-IR.
+Science 2008, 319, 1820−1823.
+(39) Flanagan, J. C.; Valentine, M. L.; Baiz, C. R. Ultrafast Dynamics at
+Lipid−Water Interfaces. Acc. Chem. Res. 2020, 53, 1860−1868.
+(40) Chalyavi, F.; Schmitz, A. J.; Tucker, M. J. Unperturbed Detection
+of the Dynamic Structure in the Hydrophobic Core of Trp-Cage via
+Two-Dimensional Infrared Spectroscopy. J. Phys. Chem. Lett. 2020, 11,
+832−837.
+(41) Buchanan, L. E.; Xiong, W. Two-Dimensional Infrared (2D IR)
+Spectroscopy. Encycl. Mod. Opt. 2018, 2, 164−183.
+(42) Hamm, P.; Zanni, M. Concepts and Methods of 2D Infrared
+Spectroscopy; Cambridge University Press: Cambridge, U.K., 2011.
+DOI: 10.1017/CBO9780511675935.
+(43) Ganim, Z.; Chung, H. S.; Smith, A. W.; DeFlores, L. P.; Jones, K.
+C.; Tokmakoff, A. Amide I Two-Dimensional Infrared Spectroscopy of
+Proteins. Acc. Chem. Res. 2008, 41, 432−441.
+(44) Ghosh, A.; Ostrander, J. S.; Zanni, M. T. Watching Proteins
+Wiggle: Mapping Structures with Two-Dimensional Infrared Spectroscopy.
+Chem. Rev. 2017, 117, 10726−10759.
+(45) Kraack, J. P.; Hamm, P. Surface-Sensitive and Surface-Specific
+Ultrafast Two-Dimensional Vibrational Spectroscopy. Chem. Rev.
+2017, 117, 10623−10664.
+(46) Kiefer, L. M.; King, J. T.; Kubarych, K. J. Dynamics of Rhenium
+Photocatalysts Revealed through Ultrafast Multidimensional Spectroscopy.
+Acc. Chem. Res. 2015, 48, 1123−1130.
+(47) Thielges, M. C.; Fayer, M. D. Protein Dynamics Studied with
+Ultrafast Two-Dimensional Infrared Vibrational Echo Spectroscopy.
+Acc. Chem. Res. 2012, 45, 1866−1874.
+(48) Roberts, S. T.; Ramasesha, K.; Tokmakoff, A. Structural
+Rearrangements in Water Viewed Through Two-Dimensional Infrared
+Spectroscopy. Acc. Chem. Res. 2009, 42, 1239−1249.
+(49) Dunkelberger, A. D.; Spann, B. T.; Fears, K. P.; Simpkins, B. S.;
+Owrutsky, J. C. Modified Relaxation Dynamics and Coherent Energy
+Exchange in Coupled Vibration-Cavity Polaritons. Nat. Commun. 2016,
+7, 13504.
+(50) Saurabh, P.; Mukamel, S. Two-Dimensional Infrared Spectroscopy
+of Vibrational Polaritons of Molecules in an Optical Cavity. J.
+Chem. Phys. 2016, 144, 124115.
+(51) Xiang, B.; Ribeiro, R. F.; Li, Y.; Dunkelberger, A. D.; Simpkins, B.
+B.; Yuen-Zhou, J.; Xiong, W. Manipulating Optical Nonlinearities of
+Molecular Polaritons by Delocalization. Sci. Adv. 2019, 5, eaax5196.
+(52) Grafton, A. B.; Dunkelberger, A. D.; Simpkins, B. S.; Triana, J. F.;
+Hernández, F. J.; Herrera, F.; Owrutsky, J. C. Excited-State Vibration-
+Polariton Transitions and Dynamics in Nitroprusside. Nat. Commun.
+2021, 12, 214.
+(53) Duan, R.; Mastron, J. N.; Song, Y.; Kubarych, K. J. Isolating
+Polaritonic 2D-IR Transmission Spectra. J. Phys. Chem. Lett. 2021, 12,
+11406−11414.
+(54) Cohn, B.; Sufrin, S.; Chuntonov, L. Ultrafast Vibrational
+Excitation Transfer on Resonant Antenna Lattices Revealed by Two-
+Dimensional Infrared Spectroscopy. J. Chem. Phys. 2022, 156, 121101.
+(55) Houdré, R.; Stanley, R. P.; Ilegems, M. Vacuum-Field Rabi
+Splitting in the Presence of Inhomogeneous Broadening: Resolution of
+a Homogeneous Linewidth in an Inhomogeneously Broadened System.
+Phys. Rev. A 1996, 53, 2711−2715.
+(56) Ribeiro, R. F.; Dunkelberger, A. D.; Xiang, B.; Xiong, W.;
+Simpkins, B. S.; Owrutsky, J. C.; Yuen-Zhou, J. Theory for Nonlinear
+Spectroscopy of Vibrational Polaritons. J. Phys. Chem. Lett. 2018, 9,
+3766−3771.
+(57) Coles, D. M.; Somaschi, N.; Michetti, P.; Clark, C.; Lagoudakis,
+P. G.; Savvidis, P. G.; Lidzey, D. G. Polariton-Mediated Energy Transfer
+between Organic Dyes in a Strongly Coupled Optical Microcavity. Nat.
+Mater. 2014, 13, 712−719.
+(58) Zhong, X.; Chervy, T.; Zhang, L.; Thomas, A.; George, J.; Genet,
+C.; Hutchison, J. A.; Ebbesen, T. W. Energy Transfer between Spatially
+Separated Entangled Molecules. Angew. Chem., Int. Ed. 2017, 56, 9034−
+9038.
+(59) Woutersen, S.; Bakker, H. J. Resonant Intermolecular Transfer of
+Vibrational Energy in Liquid Water. Nature 1999, 402, 507−509.
+(60) Bian, H.; Wen, X.; Li, J.; Chen, H.; Han, S.; Sun, X.; Song, J.;
+Zhuang, W.; Zheng, J. Ion Clustering in Aqueous Solutions Probed with
+Accounts of Chemical Research pubs.acs.org/accounts Article
+https://doi.org/10.1021/acs.accounts.2c00796
+Acc. Chem. Res. 2023, 56, 776−786
+785
+Vibrational Energy Transfer. Proc. Natl. Acad. Sci. U. S. A. 2011, 108,
+4737−4742.
+(61) Tardy, D. C.; Rabinovitch, B. S. Intermolecular Vibrational
+Energy Transfer in Thermal Unimolecular Systems. Chem. Rev. 1977,
+77, 369−408.
+(62) Baumann, T.; Hauf, M.; Schildhauer, F.; Eberl, K. B.; Durkin, P.
+M.; Deniz, E.; Löffler, J. G.; Acevedo-Rocha, C. G.; Jaric, J.; Martins, B.
+M.; Dobbek, H.; Bredenbeck, J.; Budisa, N. Site-Resolved Observation
+of Vibrational Energy Transfer Using a Genetically Encoded Ultrafast
+Heater. Angew. Chem., Int. Ed. 2019, 58, 2899−2903.
+(63) Lidzey, D. G.; Bradley, D. D. C.; Armitage, A.; Walker, S.;
+Skolnick, M. S. Photon-Mediated Hybridization of Frenkel Excitons in
+Organic Semiconductor Microcavities. Science. 2000, 288, 1620−1623.
+(64) Slootsky, M.; Liu, X.; Menon, V. M.; Forrest, S. R. Room
+Temperature Frenkel-Wannier-Mott Hybridization of Degenerate
+Excitons in a Strongly Coupled Microcavity. Phys. Rev. Lett. 2014,
+112, No. 076401.
+(65) Avramenko, A. G.; Rury, A. S. Cavity Polaritons Formed from
+Spatially Separated Quasi-Degenerate Porphyrin Excitons: Structural
+Modulations of Bright and Dark State Energies and Compositions. J.
+Phys. Chem. C 2022, 126, 15776−15787.
+(66) Hirai, K.; Hutchison, J. A.; Uji-i, H. Recent Progress in
+Vibropolaritonic Chemistry. ChemPlusChem 2020, 85, 1981−1988.
+(67) Berry, R. S. Correlation of Rates of Intramolecular Tunneling
+Processes, with Application to Some Group V Compounds. J. Chem.
+Phys. 1960, 32, 933−938.
+(68) Hochstrasser, R. M. Two-Dimensional IR-Spectroscopy: Polarization
+Anisotropy Effects. Chem. Phys. 2001, 266, 273−284.
+(69) Xiang, B.; Ribeiro, R.; Chen, L.; Wang, J.; Du, M.; Yuen-zhou, J.;
+Xiong, W. State-Selective Polariton to Dark State Relaxation Dynamics.
+J. Phys. Chem. A 2019, 123, 5918−5927.
+(70) Li, T. E.; Hammes-Schiffer, S. QM/MMModeling of Vibrational
+Polariton Induced Energy Transfer and Chemical Dynamics. J. Am.
+Chem. Soc. 2023, 145, 377−384.
+(71) Brawley, Z. T.; Storm, S. D.; Contreras Mora, D. A.; Pelton, M.;
+Sheldon, M. Angle-Independent Plasmonic Substrates for Multi-Mode
+Vibrational Strong Coupling with Molecular Thin Films. J. Chem. Phys.
+2021, 154, 104305.
+(72) Liu, K.; Huang, G.; Li, X.; Zhu, G.; Du, W.; Wang, T. Vibrational
+Strong Coupling between Surface Phonon Polaritons and Organic
+Molecules via Single Quartz Micropillars. Adv. Mater. 2022, 34,
+2109088.
+(73) Cohn, B.; Das, K.; Basu, A.; Chuntonov, L. Infrared Open
+Cavities for Strong Vibrational Coupling. J. Phys. Chem. Lett. 2021, 12,
+7060−7066.
+(74) Yang, Z.; Xiang, B.; Xiong, W. Controlling Quantum Pathways in
+Molecular Vibrational Polaritons. ACS Photonics 2020, 7, 919−924.
+(75) Yang, Z.; Xiong, W. Molecular Vibrational Polaritons Towards
+Quantum Technologies. Adv. Quantum Technol. 2022, 5, 2100163.
+(76) Xiang, B.; Yang, Z.; You, Y. Z.; Xiong, W. Ultrafast Coherence
+Delocalization in Real Space Simulated by Polaritons. Adv. Opt. Mater.
+2022, 10, 2102237.
+(77) Chenu, A.; Scholes, G. D. Coherence in Energy Transfer and
+Photosynthesis. Annu. Rev. Phys. Chem. 2015, 66, 69−96.
+(78) Rubtsova, N. I.; Qasim, L. N.; Kurnosov, A. A.; Burin, A. L.;
+Rubtsov, I. V. Ballistic Energy Transport in Oligomers. Acc. Chem. Res.
+2015, 48, 2547−2555.
+(79) Yang, Z.; Bhakta, H. H.; Xiong, W. Enabling Multiple Intercavity
+Polariton Coherences by Adding Quantum Confinement to Cavity
+Molecular Polaritons. Proc. Natl. Acad. Sci. U. S. A. 2023, 120,
+e2206062120.
+(80) Hu, G.; Ou, Q.; Si, G.; Wu, Y.; Wu, J.; Dai, Z.; Krasnok, A.;
+Mazor, Y.; Zhang, Q.; Bao, Q.; Qiu, C.-W.; Alù, A. Topological
+Polaritons and Photonic Magic Angles in Twisted α-MoO3 Bilayers.
+Nature 2020, 582, 209−213.
+Accounts of Chemical Research pubs.acs.org/accounts Article
+https://doi.org/10.1021/acs.accounts.2c00796
+Acc. Chem. Res. 2023, 56, 776−786
+786
